@@ -1,0 +1,36 @@
+[project]
+name = "secom-spc"
+version = "0.1.0"
+description = "Statistical process control and a fail-prediction study on the UCI SECOM dataset"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "Jack Hall" }]
+dependencies = [
+    "numpy",
+    "pandas",
+    "scipy",
+    "scikit-learn",
+    "statsmodels",
+    "matplotlib",
+]
+
+[dependency-groups]
+dev = ["pytest", "ruff", "jupyter", "nbconvert", "ipykernel"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/secom_spc"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+src = ["src", "tests", "scripts"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
