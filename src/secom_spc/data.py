@@ -20,12 +20,12 @@ def load_secom(data_dir: str | Path) -> tuple[pd.DataFrame, pd.Series]:
         data_dir / "secom_labels.data",
         sep=r"\s+",
         header=None,
-        names=["label", "date", "time"],
+        names=["label", "stamp"],
         quotechar='"',
     )
     if len(x) != len(raw):
         raise ValueError("secom.data and secom_labels.data have different row counts")
-    stamps = pd.to_datetime(raw["date"] + " " + raw["time"], format="%d/%m/%Y %H:%M:%S")
+    stamps = pd.to_datetime(raw["stamp"], format="%d/%m/%Y %H:%M:%S")
     x.index = pd.DatetimeIndex(stamps, name="timestamp")
     y = pd.Series((raw["label"].to_numpy() == 1).astype(int), index=x.index, name="fail")
     order = x.index.argsort(kind="stable")
