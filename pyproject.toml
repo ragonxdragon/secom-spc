@@ -5,7 +5,7 @@ description = "Statistical process control and a fail-prediction study on the UC
 readme = "README.md"
 requires-python = ">=3.11"
 license = { text = "MIT" }
-authors = [{ name = "Jack Hall" }]
+authors = [{ name = "John Hall" }]
 dependencies = [
     "numpy",
     "pandas",
