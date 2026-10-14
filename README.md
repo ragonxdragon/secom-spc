@@ -66,5 +66,6 @@ against a pinned SHA-256 before extracting two files into `data/`, which is giti
 
 ## License
 
-MIT. The SECOM dataset is from the UCI Machine Learning Repository (McCann and Johnston, 2008) and
-is not redistributed here.
+MIT. The SECOM dataset is from the UCI Machine Learning Repository (McCann and Johnston, 2008,
+[doi:10.24432/C54305](https://doi.org/10.24432/C54305)), licensed CC BY 4.0, and is not
+redistributed here.
